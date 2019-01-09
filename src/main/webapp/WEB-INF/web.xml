@@ -5,6 +5,13 @@
                              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          id="WebApp_ID" version="2.5">
 
+    <!-- 这里的配置可以被所有servlet读取-->
+    <!--<context-param>-->
+        <!--<param-name></param-name>-->
+        <!--<param-value></param-value>-->
+    <!--</context-param>-->
+
+
 
     <servlet>
         <servlet-name>hello</servlet-name>
@@ -18,7 +25,29 @@
         <servlet-name>helloHttp</servlet-name>
         <servlet-class>com.niqikai.servletdemo.HttpHello</servlet-class>
     </servlet>
-    
+    <servlet>
+        <servlet-name>startUp</servlet-name>
+        <servlet-class>com.niqikai.servletdemo.StartUpServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>config</servlet-name>
+        <servlet-class>com.niqikai.servletdemo.ConfigServlet</servlet-class>
+        <!-- 可以给servlet配置信息，只能被自己读取 -->
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>author</param-name>
+            <param-value>niqikai</param-value>
+        </init-param>
+    </servlet>
+
+
+
+
     <servlet-mapping>
         <servlet-name>hello</servlet-name>
         <url-pattern>/hello</url-pattern>
@@ -31,6 +60,9 @@
         <servlet-name>helloHttp</servlet-name>
         <url-pattern>/helloHttp</url-pattern>
     </servlet-mapping>
-
+    <servlet-mapping>
+        <servlet-name>config</servlet-name>
+        <url-pattern>/config</url-pattern>
+    </servlet-mapping>
 
 </web-app>
