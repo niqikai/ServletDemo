@@ -25,12 +25,16 @@
         <servlet-name>helloHttp</servlet-name>
         <servlet-class>com.niqikai.servletdemo.HttpHello</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>startUp</servlet-name>
-        <servlet-class>com.niqikai.servletdemo.StartUpServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
 
+    <!-- cookie -->
+    <servlet>
+        <servlet-name>createcookie</servlet-name>
+        <servlet-class>com.niqikai.cookie.CreateCookie</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>readcookie</servlet-name>
+        <servlet-class>com.niqikai.cookie.ReadCookie</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>config</servlet-name>
         <servlet-class>com.niqikai.servletdemo.ConfigServlet</servlet-class>
@@ -44,7 +48,11 @@
             <param-value>niqikai</param-value>
         </init-param>
     </servlet>
-
+    <servlet>
+        <servlet-name>startUp</servlet-name>
+        <servlet-class>com.niqikai.servletdemo.StartUpServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 
 
 
@@ -64,5 +72,19 @@
         <servlet-name>config</servlet-name>
         <url-pattern>/config</url-pattern>
     </servlet-mapping>
-
+    <servlet-mapping>
+        <servlet-name>createcookie</servlet-name>
+        <url-pattern>/createcookie</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>readcookie</servlet-name>
+        <url-pattern>/readcookie</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    
+    
+    
+    
 </web-app>
